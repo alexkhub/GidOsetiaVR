@@ -1,0 +1,19 @@
+footer {
+    padding: 40px 100px;
+    border-top: 4px solid #213E39;
+    font-size: 20px;
+}
+
+footer ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+footer ul li a {
+    color: white;
+    transition: .3s ease color;
+}
+
+footer ul li a:hover {
+    color: #bababa;
+}
