@@ -25,6 +25,8 @@ urlpatterns = [
     path('auth/', include('djoser.urls')),
     re_path('auth/', include('djoser.urls.jwt')),
     path("__debug__/", include("debug_toolbar.urls")),
+    # path('api-events/', include('events.urls')),
+    # path('api-expeditions/', include('expeditions.urls'))
 ]
 
 
