@@ -9,6 +9,10 @@ function Header() {
         body.style.overflowY = 'hidden';
     }
 
+    function loginOpen() {
+        body.style.overflowY = 'hidden';
+    }
+
     const [scroll, setScroll] = useState(0);
 
     const handleScroll = () => {
@@ -28,7 +32,7 @@ function Header() {
                 </div>
                 <div className='header-menu'>
                     <Link to='/registration' onClick={registrationOpen}>Регистрация</Link>
-                    <Link to='/login'>Вход</Link>
+                    <Link to='/login' onClick={loginOpen}>Вход</Link>
                 </div>
             </div>
             <div className={scroll > 276 ? 'header-main-menu__sticky header-main-menu' : 'header-main-menu'}>
