@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'sortedm2m',
 
+    'expeditions.apps.ExpeditionsConfig',
+    'events.apps.EventsConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -179,9 +182,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
+
 
 USE_I18N = True
 
@@ -203,7 +207,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+AUTH_USER_MODEL = 'expeditions.User'
 # подключение почты
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.gmail.com"
