@@ -58,9 +58,9 @@ class TourOperator(models.Model):
     email = models.EmailField(max_length=120, verbose_name='Почта', blank=True, null=True)
     phone = models.CharField(max_length=15, verbose_name='Номер телефона', blank=True, null=True)
     description = models.TextField(verbose_name='О турагентсве', blank=True, null=True)
-    comment = SortedManyToManyField(Comment, verbose_name='Комментарий',)
+    comment = SortedManyToManyField(Comment, verbose_name='Комментарий', )
 
-    rating = models.PositiveIntegerField(verbose_name='Рейтинг', default=1)
+    rating = models.FloatField(verbose_name='Средний рейтинг')
     slug = AutoSlugField(populate_from='name', unique=True, db_index=True, verbose_name='URL', )
 
     def __str__(self):
@@ -80,13 +80,23 @@ class Attractions(models.Model):
         verbose_name = 'Достопримечательность'
         verbose_name_plural = 'Достопримечательности'
 
+    def __str__(self):
+        return self.name
+
 
 class Expeditions(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название')
-    tour_operator = models.ForeignKey(TourOperator, on_delete=models.CASCADE , verbose_name='Туроператор')
+    tour_operator = models.ForeignKey(TourOperator, on_delete=models.CASCADE, verbose_name='Туроператор')
     start_date_time = models.DateTimeField(verbose_name='Начало экспедиции')
     end_date_time = models.DateTimeField(verbose_name='Конец экспедиции')
     attractions = SortedManyToManyField(Attractions, verbose_name='Достопримечательности')
     price = models.PositiveIntegerField(verbose_name='Цена', default=0)
     email = models.EmailField(max_length=120, verbose_name='Почта', blank=True, null=True)
     phone = models.CharField(max_length=15, verbose_name='Номер телефона', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Экспедиция'
+        verbose_name_plural = 'Экспедиции'
+
+    def __str__(self):
+        return self.name
