@@ -16,12 +16,47 @@ header::before {
 }
 
 .header-logo a {
+    position: relative;
     display: inline;
-    background-color: #545454;
-    padding: 2px 26px;
-    border-radius: 10px;
+
     color: #BABABA;
     font-size: 25px;
+    transition: .3s ease padding;
+}
+
+.header-logo {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 2px 14px;
+    border-radius: 10px;
+    background-color: #545454;
+}
+
+.header-logo::before {
+    content: '';
+    position: absolute;
+    background-image: url(../assets/img/header/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 20px;
+    left: -100%;
+    top: 5px;
+
+    transition: .3s ease left;
+}
+
+.header-logo:hover::before {
+    left: 10px;
+}
+
+.header-logo a {
+    transition: .3s ease margin-left;
+}
+
+.header-logo:hover .header-logo-link {
+    margin-left: 32px;
 }
 
 .header-top-menu {
@@ -38,7 +73,6 @@ header::before {
 }
 
 .header-menu a {
-    color: #BABABA;
     font-size: 15px;
     font-family: "Inter", sans-serif;
 }
@@ -73,6 +107,25 @@ header::before {
 
 .header-main-menu-item:first-child {
     border-top-left-radius: 0;
+}
+
+.header-main-menu__sticky {
+    position: fixed;
+    margin-top: -290px;
+}
+
+.header-main-menu-item__sticky {
+    background-color: #213E39;
+    border-radius: 0 0 25px 25px;
+
+    transition: .3s ease transform, .3s ease background-color, .3s ease border-radius;
+}
+
+.header-main-menu-item__sticky:first-child {
+    width: 90px;
+    border-radius: 0 0 25px 0;
+    margin-left: -32px;
+    text-align: right;
 }
 
 .header-main-menu a {

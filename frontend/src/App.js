@@ -13,6 +13,7 @@ function App() {
         <Routes>
             <Route path='/registration' element={<Registration/>}/>
             <Route path='/main' element={<Main/>}/>
+            <Route path='/' element={<Main/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>

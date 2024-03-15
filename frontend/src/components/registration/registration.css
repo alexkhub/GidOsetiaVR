@@ -1,4 +1,7 @@
 .registration-bg {
+    position: relative;
+    top: -300px;
+    left: 0;
     display: flex;
     height: 100svh;
     justify-content: center;
