@@ -15,7 +15,7 @@ header::before {
     z-index: -1;
 }
 
-.header-logo p {
+.header-logo a {
     display: inline;
     background-color: #545454;
     padding: 2px 26px;

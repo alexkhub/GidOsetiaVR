@@ -1,6 +1,6 @@
 .main-content-item {
     padding: 14px;
-    background-color: #173231;
+    background-color: #213E39;
     border-radius: 30px;
     display: flex;
     column-gap: 45px;
@@ -12,7 +12,7 @@
 }
 
 .main-content-item:hover {
-    background-color: #213E39;
+    background-color: #173231;
 }
 
 .main-content-item img {

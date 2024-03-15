@@ -1,23 +1,24 @@
-import { Link } from 'react-router-dom';
-import HeaderImg from '../assets/img/header/header-background.png'
+import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import './header.css';
 
 function Header() {
+
     return (
         <header className='header'>
             <div className='header-top-menu'>
                 <div className='header-logo'>
-                    <p>GidOsetia</p>
+                    <Link to='/main'>GidOsetia</Link>
                 </div>
                 <div className='header-menu'>
-                    <a href=''>Регистрация</a>
-                    <a href=''>Вход</a>
+                    <Link to='/registration'>Регистрация</Link>
+                    <Link to='/login'>Вход</Link>
                 </div>
             </div>
             <div className='header-main-menu'>
-                <a href='' className='header-main-menu-item'>Туры</a>
-                <a href='' className='header-main-menu-item'>Мероприятия</a>
-                <a href='' className='header-main-menu-item'>Букинг</a>
+                <Link to='/tours' className='header-main-menu-item'>Туры</Link>
+                <Link to='/events' className='header-main-menu-item'>Мероприятия</Link>
+                <Link to='/booking' className='header-main-menu-item'>Букинг</Link>
             </div>
         </header>
     )
