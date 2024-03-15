@@ -10,6 +10,7 @@ class User(AbstractUser):
     phone = models.CharField(max_length=20, verbose_name="Телефон", blank=True)
     slug = AutoSlugField(populate_from='username', unique=True, db_index=True, verbose_name='URL', )
     user_photo = models.ImageField(upload_to='user_img/%Y/%m/%d/', verbose_name='Аватарка', blank=True, null=True)
+    subscribe_to_the_newsletter = models.BooleanField(verbose_name='Подписка на рассылку', default=False)
 
     class Meta:
         verbose_name = 'Пользователь'

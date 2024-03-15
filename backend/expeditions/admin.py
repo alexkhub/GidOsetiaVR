@@ -6,9 +6,10 @@ from .models import *
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'username', 'first_name', 'last_name', 'email', 'phone', 'is_staff')
+    list_display = ('id', 'username', 'first_name', 'last_name', 'email', 'phone', 'is_staff', 'subscribe_to_the_newsletter')
     list_display_links = ('id', 'username')
     search_fields = ('email', 'phone', 'username')
+    list_filter = ('is_staff', 'subscribe_to_the_newsletter')
 
 
 class ImgAdmin(admin.ModelAdmin):
