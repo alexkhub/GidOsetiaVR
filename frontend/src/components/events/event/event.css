@@ -1,0 +1,36 @@
+.event-item {
+    position: relative;
+    background-color: #173231;
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    transition: .3s ease all;
+    z-index: 1;
+}
+
+.event-item:hover {
+    padding: 30px 20px;
+    height: 250px;
+}
+
+.event-item img {
+    position: absolute;
+    transition: .3s ease transform;
+    height: 182px;
+}
+
+.event-item:hover img {
+    transform: scale(1.1);
+}
+
+.event-description {
+    position: absolute;
+    top: 260px;
+    font-size: 25px;
+}

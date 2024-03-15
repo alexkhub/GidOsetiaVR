@@ -112,13 +112,15 @@ header::before {
 .header-main-menu__sticky {
     position: fixed;
     margin-top: -290px;
+    z-index: 6;
 }
 
 .header-main-menu-item__sticky {
     background-color: #213E39;
     border-radius: 0 0 25px 25px;
+    z-index: 6;
 
-    transition: .3s ease transform, .3s ease background-color, .3s ease border-radius;
+    transition: .3s ease transform, .3s ease background-color;
 }
 
 .header-main-menu-item__sticky:first-child {
