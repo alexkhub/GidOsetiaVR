@@ -23,8 +23,8 @@ class ImgAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'user', 'rating', 'date',)
-    list_display_links = ('id', 'title')
+    list_display = ('id', 'text', 'user', 'rating', 'date',)
+    list_display_links = ('id', 'text')
     list_filter = ('date', 'rating')
     search_fields = ('user__username',)
 

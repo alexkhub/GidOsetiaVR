@@ -6,10 +6,10 @@ from autoslug import AutoSlugField
 class Event(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название', )
     date_time = models.DateTimeField(verbose_name='Время и дата')
-    description = models.TextField(verbose_name='Описание', )
-    imgs = SortedManyToManyField('expeditions.Img', verbose_name='Фотографии')
+    description = models.TextField(verbose_name='Описание', blank=True )
+    imgs = SortedManyToManyField('expeditions.Img', verbose_name='Фотографии', blank=True)
     slug = AutoSlugField(populate_from='name', unique=True, db_index=True, verbose_name='URL', )
-    comments = SortedManyToManyField('expeditions.Comment', verbose_name='Комментарии')
+    comments = SortedManyToManyField('expeditions.Comment', verbose_name='Комментарии', blank=True)
 
     class Meta:
         verbose_name = 'Мероприятие'
@@ -21,7 +21,7 @@ class Event(models.Model):
 
 class HotelType(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название')
-    description = models.TextField(verbose_name='Описание')
+    description = models.TextField(verbose_name='Описание', blank=True)
     slug = AutoSlugField(populate_from='name', unique=True, db_index=True, verbose_name='URL', )
 
     class Meta:
@@ -39,8 +39,8 @@ class Hotel(models.Model):
     redirect_url = models.SlugField(verbose_name='URL заведения', )
     hotel_type = models.ForeignKey(HotelType, on_delete=models.SET_NULL, verbose_name='Тип объектов', null=True,
                                    blank=True)
-    imgs = SortedManyToManyField('expeditions.Img', verbose_name='Фотографии')
-    comments = SortedManyToManyField('expeditions.Comment', verbose_name='Комментарии')
+    imgs = SortedManyToManyField('expeditions.Img', verbose_name='Фотографии', blank=True)
+    comments = SortedManyToManyField('expeditions.Comment', verbose_name='Комментарии', blank=True)
     rating = models.FloatField(verbose_name='Средний рейтинг')
     description = models.TextField(verbose_name='Описание')
     slug = AutoSlugField(populate_from='name', unique=True, db_index=True, verbose_name='URL', )

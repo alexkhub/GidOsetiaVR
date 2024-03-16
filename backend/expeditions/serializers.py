@@ -26,9 +26,23 @@ class User_RegistrationSerializer(serializers.ModelSerializer):
         return User.objects.create_user(**validate_data)
 
 
-class MainImgListSerializer(serializers.ModelSerializer):
+class MainImgSerializer(serializers.ModelSerializer):
     """вывод главной картинки """
 
     class Meta:
         model = Img
         fields = ('img', 'first_img')
+
+
+class ImgListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Img
+        fields = ('img',)
+
+
+class CommentListSerializer(serializers.ModelSerializer):
+    user = serializers.SlugRelatedField(slug_field='username', read_only=True)
+
+    class Meta:
+        model = Comment
+        fields = '__all__'
