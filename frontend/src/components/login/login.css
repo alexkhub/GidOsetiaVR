@@ -4,6 +4,7 @@
     left: 0;
     display: flex;
     height: 100svh;
+    width: 100svw;
     justify-content: center;
     align-items: center;
     background-color: #213E39;

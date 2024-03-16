@@ -1,6 +1,7 @@
 .main-content {
     padding: 65px 70px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     row-gap: 35px;
 }
