@@ -1,13 +1,14 @@
 header {
     position: relative;
     height: 250px;
+    width: 1450px;
     padding: 25px;
 }
 
 header::before {
     position: absolute;
     content: '';
-    background-image: url('../assets/img/header/header-background.png');
+    background-image: url('./header-img/header-background.png');
     background-repeat: no-repeat;
     border-radius: 25px;
     width: 97%;
@@ -36,7 +37,7 @@ header::before {
 .header-logo::before {
     content: '';
     position: absolute;
-    background-image: url(../assets/img/header/logo.png);
+    background-image: url('./header-img/logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 32px;
@@ -123,10 +124,14 @@ header::before {
     transition: .3s ease transform, .3s ease background-color;
 }
 
+.header-main-menu-item__sticky:hover {
+    background-color: #173231;
+}
+
 .header-main-menu-item__sticky:first-child {
-    width: 90px;
+    width: 94px;
     border-radius: 0 0 25px 0;
-    margin-left: -32px;
+    margin-left: -35px;
     text-align: right;
 }
 

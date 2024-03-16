@@ -39,6 +39,7 @@ function Header() {
                 <Link to='/tours' className={scroll > 276 ? 'header-main-menu-item__sticky header-main-menu-item' : 'header-main-menu-item'}><p>Туры</p></Link>
                 <Link to='/events' className={scroll > 276 ? 'header-main-menu-item__sticky header-main-menu-item' : 'header-main-menu-item'}><p>Мероприятия</p></Link>
                 <Link to='/booking' className={scroll > 276 ? 'header-main-menu-item__sticky header-main-menu-item' : 'header-main-menu-item'}><p>Букинг</p></Link>
+                <Link to='/panorama' className={scroll > 276 ? 'header-main-menu-item__sticky header-main-menu-item' : 'header-main-menu-item'}><p>Панорама</p></Link>
             </div>
         </header>
     )

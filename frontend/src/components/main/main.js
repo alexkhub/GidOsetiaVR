@@ -1,6 +1,6 @@
 import './main.css';
-import ItemImg1 from '../assets/img/main/item-img1.png';
-import ItemImg2 from '../assets/img/main/item-img2.png';
+import ItemImg1 from './main-img/item-img1.png';
+import ItemImg2 from './main-img/item-img2.png';
 import Attraction from './attraction/attraction';
 function Main() {
     return (
