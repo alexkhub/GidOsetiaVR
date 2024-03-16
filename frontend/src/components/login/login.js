@@ -26,7 +26,6 @@ function Login() {
         }
 
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwt');
-        axios.get('http://127.0.0.1:8000/api-timetable');
     }
     return (
         <div className='login-bg'>
