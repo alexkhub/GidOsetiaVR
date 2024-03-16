@@ -8,7 +8,7 @@ header {
 header::before {
     position: absolute;
     content: '';
-    background-image: url('../assets/img/header/header-background.png');
+    background-image: url('./header-img/header-background.png');
     background-repeat: no-repeat;
     border-radius: 25px;
     width: 97%;
@@ -37,7 +37,7 @@ header::before {
 .header-logo::before {
     content: '';
     position: absolute;
-    background-image: url(../assets/img/header/logo.png);
+    background-image: url('./header-img/logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 32px;

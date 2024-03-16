@@ -1,7 +1,7 @@
 import './events.css'
 import Event from './event/event';
-import eventImg1 from '../assets/img/events/event-img1.png';
-import eventImg2 from '../assets/img/events/event-img2.png';
+import eventImg1 from './events-img/event-img1.png';
+import eventImg2 from './events-img/event-img2.png';
 
 function Events() {
     return (
