@@ -1,0 +1,13 @@
+.events-content {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.events-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 0;
+}
