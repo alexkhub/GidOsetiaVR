@@ -124,6 +124,10 @@ header::before {
     transition: .3s ease transform, .3s ease background-color;
 }
 
+.header-main-menu-item__sticky:hover {
+    background-color: #173231;
+}
+
 .header-main-menu-item__sticky:first-child {
     width: 94px;
     border-radius: 0 0 25px 0;

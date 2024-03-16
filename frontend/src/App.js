@@ -6,6 +6,7 @@ import Footer from './components/footer/footer';
 import Registration from './components/registration/registration';
 import Login from './components/login/login';
 import Events from './components/events/events';
+import Panorama from './components/panorama/panorama';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/login' element={<Login/>}/>
             <Route path='/main' element={<Main/>}/>
             <Route path='/events' element={<Events/>}/>
+            <Route path='/panorama' element={<Panorama/>}/>
             <Route path='/' element={<Main/>}/>
         </Routes>
       </BrowserRouter>

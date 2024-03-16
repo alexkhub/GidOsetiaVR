@@ -1,6 +1,6 @@
 .event-item {
     position: relative;
-    background-color: #173231;
+    background-color: #213E39;
     border-radius: 20px;
     padding: 20px;
     width: 300px;
@@ -10,13 +10,14 @@
     justify-content: center;
     overflow: hidden;
 
-    transition: .3s ease all;
+    transition: .3s ease padding, .3s ease height, .3s ease background-color;
     z-index: 1;
 }
 
 .event-item:hover {
     padding: 30px 20px;
     height: 250px;
+    background-color: #173231;
 }
 
 .event-item img {
