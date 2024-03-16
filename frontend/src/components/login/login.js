@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
 import axios from 'axios'
 import './login.css';
 
@@ -7,6 +8,8 @@ function Login() {
     function loginClose() {
         body.style.overflowY = '';
     }
+
+    const [JWT, setData] = useState('');
 
     function login() {
         const loginValue = document.querySelector('#login-input').value;
@@ -20,14 +23,12 @@ function Login() {
                 },
                 { headers: { 'Content-Type': 'application/json' } }).then(
                     data => {
-                        console.log('fdsfsdfsd');
+                        setData(JSON.stringify(data.data.access));
                     }
-                );
+                    );
         }
-
-        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwt');
-        axios.get('http://127.0.0.1:8000/api-timetable');
     }
+        axios.defaults.headers.common['Authorization'] = 'JWT '+JWT;
     return (
         <div className='login-bg'>
             <div className='login-content'>
