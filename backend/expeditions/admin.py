@@ -14,6 +14,7 @@ class UserAdmin(admin.ModelAdmin):
 
 class ImgAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'get_image')
+    prepopulated_fields = {"slug": ("name",)}
 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.img.url} width="90" height="90"')
