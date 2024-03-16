@@ -16,7 +16,7 @@ function Login() {
         const passwordValue = document.querySelector('#login-password').value;
 
         if (localStorage.getItem('jwt') === null) {
-            axios.post("http://127.0.0.1:8000/auth/jwt/create",
+            axios.post("http://127.0.0.1:8000/auth/jwt/create/",
                 {
                     username: loginValue,
                     password: passwordValue
@@ -24,6 +24,7 @@ function Login() {
                 { headers: { 'Content-Type': 'application/json' } }).then(
                     data => {
                         setData(JSON.stringify(data.data.access));
+                        console.log(data.data.access)
                     }
                     );
         }
