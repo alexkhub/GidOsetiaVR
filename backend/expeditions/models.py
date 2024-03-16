@@ -29,6 +29,8 @@ class User(AbstractUser):
 class Img(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название')
     img = models.ImageField(upload_to='img/%Y/%m/%d/', verbose_name='Картинка')
+    first_img = models.BooleanField(default=False, verbose_name='Главная картинка')
+    slug = models.SlugField(max_length=50, unique=True, db_index=True, verbose_name='URL')
 
     class Meta:
         verbose_name = 'Изображение'
@@ -36,6 +38,12 @@ class Img(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if self.first_img:
+            self.name = f'{self.name}-main'
+            self.slug = f'{self.slug}-main'
+        super(Img, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):

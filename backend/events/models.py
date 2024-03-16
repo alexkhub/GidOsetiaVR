@@ -9,6 +9,7 @@ class Event(models.Model):
     description = models.TextField(verbose_name='Описание', )
     imgs = SortedManyToManyField('expeditions.Img', verbose_name='Фотографии')
     slug = AutoSlugField(populate_from='name', unique=True, db_index=True, verbose_name='URL', )
+    comments = SortedManyToManyField('expeditions.Comment', verbose_name='Комментарии')
 
     class Meta:
         verbose_name = 'Мероприятие'
