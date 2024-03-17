@@ -46,7 +46,7 @@
 .add-favorite-button::before {
     content: '';
     position: absolute;
-    background-image: url(./compass.png);
+    background-image: url(./landmark-img/compass.png);
     background-repeat: no-repeat;
     width: 109px;
     height: 132px;
@@ -70,7 +70,7 @@
     content: '';
     width: 80px;
     height: 87px;
-    background-image: url(./qoutation-marks.png);
+    background-image: url(./landmark-img/qoutation-marks.png);
     background-repeat: no-repeat;
     left: -130px;
 }

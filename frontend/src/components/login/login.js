@@ -36,7 +36,7 @@ function Login() {
                     <input type='password' placeholder='Пароль' id='login-password' />
                 </form>
                 <div className='login-buttons'>
-                    <Link to='/registration'><button>Регистрация</button></Link>
+                    <Link to='/registration'><button className='registration-hyperlink'>Регистрация</button></Link>
                     <Link to='/main' onClick={loginClose}><button><i class="fas fa-times"></i></button></Link>
                     <button onClick={login}><i class="fas fa-check"></i></button>
                 </div>

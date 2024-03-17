@@ -3,11 +3,11 @@ import Footer from '../footer/footer';
 import LandmarkMenuItem from './landmarkMenuItem/landmarkMenuItem';
 import RecomendationsItem from './recomendationsItem/recomendationsItem';
 
-import landmarkImg from './landmark-img.jpg';
-import backgroundRoutes from './background-routes.png';
+import landmarkImg from './landmark-img/landmark-img.jpg';
+import backgroundRoutes from './landmark-img/background-routes.png';
 
-import restaurantExample from './restaurant-example-img.png';
-import hotelExample from './hotel-example-img.png';
+import restaurantExample from './landmark-img/restaurant-example-img.png';
+import hotelExample from './landmark-img/hotel-example-img.png';
 
 import campingIcon from './landmarkMenuItem/icons/camping-icon.png';
 import eventsIcon from './landmarkMenuItem/icons/events-icon.png';

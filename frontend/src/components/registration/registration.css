@@ -91,11 +91,17 @@
     outline: none;
     padding: 10px 20px;
     font-size: 32px;
-    background-color: #3E3E3E;
+    background-color: transparent;
     color: #2C83A1;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+
+    transition: .3s ease background-color;
+}
+
+.registration-buttons button:hover {
+    background-color: #be98736f;
 }
 
 .registration-buttons i {
