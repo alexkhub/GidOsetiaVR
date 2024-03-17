@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/header/header';
 import Main from './components/main/main';
+import Landmark from './components/landmark/landmark';
 import Footer from './components/footer/footer';
 import Registration from './components/registration/registration';
 import Login from './components/login/login';
@@ -19,6 +20,7 @@ function App() {
             <Route path='/main' element={<Main/>}/>
             <Route path='/events' element={<Events/>}/>
             <Route path='/panorama' element={<Panorama/>}/>
+            <Route path='/landmark' element={<Landmark/>}/>
             <Route path='/' element={<Main/>}/>
         </Routes>
       </BrowserRouter>
