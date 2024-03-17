@@ -11,6 +11,13 @@ class EventAdmin(admin.ModelAdmin):
     search_fields = ('name', 'description',)
 
 
+class CommentEventAdmin(admin.ModelAdmin):
+    list_display = ('id', 'text', 'user', 'rating', 'date',)
+    list_display_links = ('id', 'text')
+    list_filter = ('date', 'rating')
+    search_fields = ('user__username',)
+
+
 class HotelTypeAdmin(admin.ModelAdmin):
     list_display = ('id', 'name',)
     list_display_links = ('id', 'name')
@@ -26,3 +33,4 @@ class HotelAdmin(admin.ModelAdmin):
 admin.site.register(Event, EventAdmin)
 admin.site.register(HotelType, HotelTypeAdmin)
 admin.site.register(Hotel, HotelAdmin)
+admin.site.register(CommentEvent, CommentEventAdmin)

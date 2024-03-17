@@ -47,11 +47,11 @@ class Img(models.Model):
 
 
 class Comment(models.Model):
-
     rating = models.PositiveIntegerField(verbose_name='Оценка', default=1)
     date = models.DateField(verbose_name='Дата', auto_now_add=True)
     user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
     text = models.TextField(verbose_name='Комментарий', blank=True, null=True)
+
 
     class Meta:
         verbose_name = 'Комментарий'
