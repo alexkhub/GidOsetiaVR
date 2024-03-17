@@ -1,6 +1,6 @@
 .event-item {
     position: relative;
-    background-color: #213E39;
+    background-color: #BE9973;
     border-radius: 20px;
     padding: 20px;
     width: 300px;
@@ -17,7 +17,7 @@
 .event-item:hover {
     padding: 30px 20px;
     height: 250px;
-    background-color: #173231;
+    background-color: #DCB083;
 }
 
 .event-item img {
