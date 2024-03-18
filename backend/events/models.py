@@ -23,7 +23,7 @@ class CommentEvent(models.Model):
     date = models.DateField(verbose_name='Дата', auto_now_add=True)
     user = models.ForeignKey('expeditions.User', verbose_name='Пользователь', on_delete=models.CASCADE)
     text = models.TextField(verbose_name='Комментарий', blank=True, null=True)
-    event = models.ForeignKey('Event' , on_delete=models.CASCADE, verbose_name='Мероприятие')
+    event = models.ForeignKey('Event', on_delete=models.CASCADE, verbose_name='Мероприятие')
 
     class Meta:
         verbose_name = 'Комментарии эвента'
@@ -31,6 +31,7 @@ class CommentEvent(models.Model):
 
     def __str__(self):
         return f'{self.user}-{self.text[:15]}...'
+
 
 class HotelType(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название')
@@ -64,3 +65,17 @@ class Hotel(models.Model):
 
     def __str__(self):
         return self.name
+
+class CommentHotel(models.Model):
+    rating = models.PositiveIntegerField(verbose_name='Оценка', default=1)
+    date = models.DateField(verbose_name='Дата', auto_now_add=True)
+    user = models.ForeignKey('expeditions.User', verbose_name='Пользователь', on_delete=models.CASCADE)
+    text = models.TextField(verbose_name='Комментарий', blank=True, null=True)
+    hotel  = models.ForeignKey('Hotel' , on_delete=models.CASCADE, verbose_name='Отель')
+
+    class Meta:
+        verbose_name = 'Комментарии отели'
+        verbose_name_plural = 'Комментарии отели'
+
+    def __str__(self):
+        return f'{self.user}-{self.text[:15]}...'

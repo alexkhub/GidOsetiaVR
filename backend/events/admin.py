@@ -29,8 +29,15 @@ class HotelAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email')
     list_filter = ('hotel_type', 'rating')
 
+class CommentHotelAdmin(admin.ModelAdmin):
+    list_display = ('id', 'text', 'user', 'rating', 'date',)
+    list_display_links = ('id', 'text')
+    list_filter = ('date', 'rating')
+    search_fields = ('user__username',)
+
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(HotelType, HotelTypeAdmin)
 admin.site.register(Hotel, HotelAdmin)
 admin.site.register(CommentEvent, CommentEventAdmin)
+admin.site.register(CommentHotel, CommentHotelAdmin)
