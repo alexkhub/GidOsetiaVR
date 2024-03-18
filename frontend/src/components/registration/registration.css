@@ -7,8 +7,8 @@
     width: 100svw;
     justify-content: center;
     align-items: center;
-    background-color: #213E39;
-    z-index: 1;
+    background-color: #F7E0C8;
+    z-index: 2;
 }
 
 .registration-bg::before {
@@ -28,14 +28,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #545454;
+    background-color: #D9D9D9;
+    border: 1px solid black;
     border-radius: 20px;
     padding: 30px 40px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .registration-title {
     font-size: 34px;
+    color: #2C83A1;
 }
 
 .registration-content form {
@@ -43,10 +45,11 @@
     width: 450px;
     flex-direction: column;
     justify-content: center;
-    padding: 30px;
-    background-color: #3E3E3E;
+    padding: 20px 30px;
+    background-color: transparent;
+    border: 3px solid #BE9973;
     border-radius: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .registration-content form input::placeholder {
@@ -56,7 +59,8 @@
 .registration-content form input {
     background-color: transparent;
     border: none;
-    border-bottom: 4px solid #545454;
+    border-bottom: 4px solid #BE9973;
+    color: #BE9973;
     outline: none;
     height: 45px;
     margin-top: 10px;
@@ -65,6 +69,7 @@
 
 .registration-content form input::placeholder {
     transition: .3s ease transform;
+    color: #BE9973;
 }
 
 .registration-content form input:focus::placeholder {
@@ -86,10 +91,21 @@
     outline: none;
     padding: 10px 20px;
     font-size: 32px;
-    background-color: #3E3E3E;
+    background-color: transparent;
+    color: #2C83A1;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+
+    transition: .3s ease background-color;
+}
+
+.registration-buttons button:hover {
+    background-color: #be98736f;
+}
+
+.registration-buttons i {
+    color: #2C83A1;
 }
 
 .subscribe-container {

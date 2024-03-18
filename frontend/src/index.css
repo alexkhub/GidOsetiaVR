@@ -1,7 +1,20 @@
 body {
-  background-color: #545454;
+  background-color: #F7E0C8;
   display: flex;
   justify-content: center;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #bababa;
+  border-radius: 20px;
 }
 
 * {
@@ -10,7 +23,7 @@ body {
   font-family: "Kelly Slab", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #bababa;
+  color: #674042;
 }
 
 a {

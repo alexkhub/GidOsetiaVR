@@ -1,74 +1,114 @@
 .landmark-content {
     position: absolute;
+    width: calc(100svw - 77px);
+    height: calc(300svh - 60px);
     top: 0;
     left: 0;
-    z-index: 5;
-    background-color: #545454;
-    height: calc(100svh - 60px);
-    width: calc(100svw - 60px);
     padding: 30px;
+    z-index: 6;
+    background-color: #F7E0C8;
 }
 
 .landmark-img-container {
     position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
+    width: 1476px;
+    height: 640px;
+    border-radius: 30px;
+    z-index: 0;
     overflow: hidden;
-}
-
-.landmark-title {
-    width: 100%;
-    top: 50px;
-    position: absolute;
-    z-index: 4;
-    text-align: center;
-    font-size: 120px;
-    color: white;
-    letter-spacing: 35px;
 }
 
 .landmark-img-container img {
     position: absolute;
     width: 100%;
-    height: 100%;
-    user-select: none;
+    top: -300px;
+}
+
+.add-favorite-button {
+    position: relative;
+    font-size: 22px;
+    z-index: 1;
+    width: 330px;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: #BE9973;
+    top: 486px;
+    left: 89px;
+    cursor: pointer;
+}
+
+.add-favorite-button p {
+    margin-left: 70px;
+    text-wrap: nowrap;
+    color: #674042;
+}
+
+.add-favorite-button::before {
+    content: '';
+    position: absolute;
+    background-image: url(./landmark-img/compass.png);
+    background-repeat: no-repeat;
+    width: 109px;
+    height: 132px;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.landmark-info {
+    padding: 0 200px;
+    margin-top: 100px;
+}
+
+.landmark-title {
+    position: relative;
+    font-size: 48px;
+}
+
+.landmark-title::before {
+    position: absolute;
+    content: '';
+    width: 80px;
+    height: 87px;
+    background-image: url(./landmark-img/qoutation-marks.png);
+    background-repeat: no-repeat;
+    left: -130px;
 }
 
 .landmark-text {
-    position: relative;
-    background-color: #213E32;
-    color: white;
-    padding: 20px;
-    box-sizing: content-box;
-    width: 550px;
-    height: 300px;
-    border-radius: 25px;
-    top: 49%;
-    left: 59%;
-}
-
-.landmark-text-container {
-    height: 300px;
-    width: 530px;
-    overflow-y: scroll;
-}
-
-.landmark-text-container::-webkit-scrollbar {
-    width: 13px;
-    background-color: #BABABA;
-    border-radius: 20px;
-}
-
-.landmark-text-container::-webkit-scrollbar-thumb {
-    background: #545454;
-    border-radius: 20px;
-    border: 3px solid #BABABA;
-}
-
-.landmark-text p {
+    font-size: 24px;
+    width: 1100px;
+    margin-top: 20px;
     font-family: "Inter", sans-serif;
-    font-size: 20px;
-    width: 460px;
-    color: white;
+}
+
+.landmark-menu {
+    display: flex;
+    gap: 70px;
+    padding: 50px 200px;
+    flex-wrap: wrap;
+}
+
+.background-img-routes {
+    position: absolute;
+    top: 820px;
+    width: 1489px;
+    height: 1574px;
+    z-index: -1;
+}
+
+.recomendations {
+    padding: 0 150px;
+}
+
+.recomendations-title {
+    font-size: 48px;
+}
+
+.recomendations-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 50px;
 }
