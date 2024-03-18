@@ -6,7 +6,8 @@ from .models import *
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'username', 'first_name', 'last_name', 'email', 'phone', 'is_staff', 'subscribe_to_the_newsletter')
+    list_display = (
+    'id', 'username', 'first_name', 'last_name', 'email', 'phone', 'is_staff', 'subscribe_to_the_newsletter')
     list_display_links = ('id', 'username')
     search_fields = ('email', 'phone', 'username')
     list_filter = ('is_staff', 'subscribe_to_the_newsletter')
@@ -20,13 +21,6 @@ class ImgAdmin(admin.ModelAdmin):
         return mark_safe(f'<img src={obj.img.url} width="90" height="90"')
 
     get_image.short_description = "Изображение"
-
-
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'text', 'user', 'rating', 'date',)
-    list_display_links = ('id', 'text')
-    list_filter = ('date', 'rating')
-    search_fields = ('user__username',)
 
 
 class TourOperatorAdmin(admin.ModelAdmin):
@@ -54,9 +48,16 @@ class ExpeditionsAdmin(admin.ModelAdmin):
     list_editable = ('start_date_time', 'end_date_time')
 
 
+class CommentTourOperatorAdmin(admin.ModelAdmin):
+    list_display = ('id', 'text', 'user', 'rating', 'date',)
+    list_display_links = ('id', 'text')
+    list_filter = ('date', 'rating')
+    search_fields = ('user__username',)
+
+
 admin.site.register(User, UserAdmin)
 admin.site.register(Img, ImgAdmin)
-admin.site.register(Comment, CommentAdmin)
 admin.site.register(TourOperator, TourOperatorAdmin)
 admin.site.register(Attractions, AttractionsAdmin)
 admin.site.register(Expeditions, ExpeditionsAdmin)
+admin.site.register(CommentTourOperator, CommentTourOperatorAdmin)

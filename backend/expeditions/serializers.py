@@ -40,21 +40,21 @@ class ImgListSerializer(serializers.ModelSerializer):
         fields = ('img',)
 
 
-class CommentListSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field='username', read_only=True)
-
-    class Meta:
-        model = Comment
-        fields = '__all__'
-
-
-class CommentSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field='username', read_only=True)
-
-    class Meta:
-        model = Comment
-        fields = '__all__'
-
-    def create(self, validated_data):
-        validated_data['user'] = self.context['request'].user
-        return Comment.objects.create(**validated_data)
+# class CommentListSerializer(serializers.ModelSerializer):
+#     user = serializers.SlugRelatedField(slug_field='username', read_only=True)
+#
+#     class Meta:
+#         model = Comment
+#         fields = '__all__'
+#
+#
+# class CommentSerializer(serializers.ModelSerializer):
+#     user = serializers.SlugRelatedField(slug_field='username', read_only=True)
+#
+#     class Meta:
+#         model = Comment
+#         fields = '__all__'
+#
+#     def create(self, validated_data):
+#         validated_data['user'] = self.context['request'].user
+#         return Comment.objects.create(**validated_data)

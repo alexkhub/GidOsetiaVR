@@ -46,28 +46,12 @@ class Img(models.Model):
         super(Img, self).save(*args, **kwargs)
 
 
-class Comment(models.Model):
-    rating = models.PositiveIntegerField(verbose_name='Оценка', default=1)
-    date = models.DateField(verbose_name='Дата', auto_now_add=True)
-    user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
-    text = models.TextField(verbose_name='Комментарий', blank=True, null=True)
-
-
-    class Meta:
-        verbose_name = 'Комментарий'
-        verbose_name_plural = 'Комментарии'
-
-    def __str__(self):
-        return f'{self.user}-{self.text[:15]}...'
-
-
 class TourOperator(models.Model):
     name = models.CharField(max_length=150, verbose_name='Название турагенства ')
     logo = models.ImageField(upload_to='tour_logo/%Y/%m/%d/', verbose_name='Логотип', blank=True, null=True)
     email = models.EmailField(max_length=120, verbose_name='Почта', blank=True, null=True)
     phone = models.CharField(max_length=15, verbose_name='Номер телефона', blank=True, null=True)
     description = models.TextField(verbose_name='О турагентсве', blank=True, null=True)
-    comment = SortedManyToManyField(Comment, verbose_name='Комментарий', )
     rating = models.FloatField(verbose_name='Средний рейтинг')
     slug = AutoSlugField(populate_from='name', unique=True, db_index=True, verbose_name='URL', )
 
@@ -79,9 +63,26 @@ class TourOperator(models.Model):
         verbose_name_plural = 'Туроператоры'
 
 
+class CommentTourOperator(models.Model):
+    rating = models.PositiveIntegerField(verbose_name='Оценка', default=1)
+    date = models.DateField(verbose_name='Дата', auto_now_add=True)
+    user = models.ForeignKey('expeditions.User', verbose_name='Пользователь', on_delete=models.CASCADE)
+    text = models.TextField(verbose_name='Комментарий', blank=True, null=True)
+    tour_operator = models.ForeignKey('TourOperator', on_delete=models.CASCADE, verbose_name='Туроператор')
+
+    class Meta:
+        verbose_name = 'Комментарии туроператор'
+        verbose_name_plural = 'Комментарии туроператор'
+
+    def __str__(self):
+        return f'{self.user}-{self.text[:15]}...'
+
+
 class Attractions(models.Model):
     name = models.CharField(max_length=150, verbose_name='Название')
     imgs = SortedManyToManyField(Img, verbose_name='Картинки')
+    description = models.TextField(verbose_name='О турагентсве', blank=True, null=True)
+    address = models.CharField(max_length=80, verbose_name='Адрес', null=True, blank=True)
     slug = AutoSlugField(populate_from='name', unique=True, db_index=True, verbose_name='URL', )
 
     class Meta:
