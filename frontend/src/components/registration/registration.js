@@ -15,8 +15,7 @@ function Registration() {
     const tel = document.querySelector('#registration-input-tel');
     const password = document.querySelector('#registration-input-password');
     const repeatPassword = document.querySelector('#registration-input-repeat-password');
-    const newsletter =document.querySelector('#subscribe-checkbox')
-    const fileInput = document.querySelector('#registration-file-input-label');
+    const newsletter = document.querySelector('#subscribe-checkbox')
     const csrf_token = document.cookie;
 
     function registration() {
