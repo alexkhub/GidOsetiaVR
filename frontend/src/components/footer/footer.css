@@ -1,7 +1,13 @@
 footer {
+    margin-top: 100px;
     padding: 40px 100px;
-    border-top: 4px solid #213E39;
     font-size: 20px;
+    background-color: #D9D9D9;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
 }
 
 footer ul li {
@@ -10,10 +16,11 @@ footer ul li {
 }
 
 footer ul li a {
-    color: white;
+    color: black;
     transition: .3s ease color;
+    font-family: "Inter", sans-serif;
 }
 
 footer ul li a:hover {
-    color: #bababa;
+    color: rgb(160, 160, 160);
 }

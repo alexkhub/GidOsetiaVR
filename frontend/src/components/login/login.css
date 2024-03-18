@@ -7,7 +7,7 @@
     width: 100svw;
     justify-content: center;
     align-items: center;
-    background-color: #213E39;
+    background-color: #F7E0C8;
     z-index: 2;
 }
 
@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #545454;
+    background-color: #D9D9D9;
     border-radius: 20px;
     padding: 30px 40px;
     z-index: 1;
@@ -36,6 +36,7 @@
 
 .login-title {
     font-size: 34px;
+    color: #2C83A1;
 }
 
 .login-content form {
@@ -44,7 +45,8 @@
     flex-direction: column;
     justify-content: center;
     padding: 30px;
-    background-color: #3E3E3E;
+    background-color: transparent;
+    border: 3px solid #BE9973;
     border-radius: 20px;
     margin-top: 40px;
 }
@@ -56,7 +58,8 @@
 .login-content form input {
     background-color: transparent;
     border: none;
-    border-bottom: 4px solid #545454;
+    border-bottom: 4px solid #BE9973;
+    color: #BE9973;
     outline: none;
     height: 45px;
     margin-top: 10px;
@@ -65,6 +68,7 @@
 
 .login-content form input::placeholder {
     transition: .3s ease transform;
+    color: #BE9973;
 }
 
 .login-content form input:focus::placeholder {
@@ -77,17 +81,34 @@
 
 .login-buttons {
     margin-top: 25px;
-    margin-left: 70px;
+    margin-left: 80px;
     display: flex;
-    column-gap: 45px;
+    align-items: center;
+    column-gap: 30px;
 }
 
 .login-buttons button {
     outline: none;
-    padding: 10px 20px;
     font-size: 32px;
-    background-color: #3E3E3E;
+    background-color: transparent;
+    color: #2C83A1;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+
+    transition: .3s ease background-color;
+}
+
+.login-buttons button:hover {
+    background-color: #be98736f;
+}
+
+.registration-hyperlink {
+    padding: 10px;
+}
+
+.login-buttons i {
+    padding: 15px;
+    border-radius: 20px;
+    color: #2C83A1;
 }

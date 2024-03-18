@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import React, {useState} from 'react';
 import axios from 'axios'
 import './login.css';
 
@@ -9,27 +8,25 @@ function Login() {
         body.style.overflowY = '';
     }
 
-    const [JWT, setData] = useState('');
-
     function login() {
         const loginValue = document.querySelector('#login-input').value;
         const passwordValue = document.querySelector('#login-password').value;
 
         if (localStorage.getItem('jwt') === null) {
-            axios.post("http://127.0.0.1:8000/auth/jwt/create/",
+            axios.post("http://127.0.0.1:8000/auth/jwt/create",
                 {
                     username: loginValue,
                     password: passwordValue
                 },
                 { headers: { 'Content-Type': 'application/json' } }).then(
                     data => {
-                        setData(JSON.stringify(data.data.access));
-                        console.log(data.data.access)
+                        console.log('fdsfsdfsd');
                     }
-                    );
+                );
         }
+
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwt');
     }
-        axios.defaults.headers.common['Authorization'] = 'JWT '+JWT;
     return (
         <div className='login-bg'>
             <div className='login-content'>
@@ -39,7 +36,7 @@ function Login() {
                     <input type='password' placeholder='Пароль' id='login-password' />
                 </form>
                 <div className='login-buttons'>
-                    <Link to='/registration'><button>Регистрация</button></Link>
+                    <Link to='/registration'><button className='registration-hyperlink'>Регистрация</button></Link>
                     <Link to='/main' onClick={loginClose}><button><i class="fas fa-times"></i></button></Link>
                     <button onClick={login}><i class="fas fa-check"></i></button>
                 </div>
